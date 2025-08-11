@@ -1,0 +1,51 @@
+.clrWhite{
+    color: white;
+}            
+            /* BlogBanner Section Start */
+.BlogBanner{
+    background-image: url(../images/img71.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}                        
+            /* BlogBanner Section End */
+            /* WoodyBlog Section Start */
+.blogSlide{
+    width: 360px !important;
+}            
+.woodyBlogImg{
+    overflow: hidden !important;
+    height: 280px;
+    width: 350px !important;
+    border-radius: 12px;
+}
+.woodyBlogImg>img{
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+.woodyBlogImg>img:hover{
+    transform: scale(1.1);
+}
+            /* WoodyBlog Section End */
+
+
+            /* Media Query */
+
+@media only screen and (max-width:1030px){
+    /* WoodyBlog Section Start */
+.woodyBlogImg{
+    overflow: hidden !important;
+    height: 280px;
+    width: 280px !important;
+    border-radius: 12px;
+}    
+}            
+
+@media only screen and (max-width:576px){
+    /* WoodyBlog Section Start */
+.woodyBlogImg{
+    overflow: hidden !important;
+    height: 280px;
+    width: 280px !important;
+    border-radius: 12px;
+}    
+}            

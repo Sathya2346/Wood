@@ -1,0 +1,54 @@
+.clrWhite{
+    color: white;
+}   
+button{
+    border: none;
+}         
+            /* BlogBanner Section Start */
+.BlogBanner{
+    background-image: url(../images/img71.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}                        
+.bannImg{
+    transition: transform 0.8s ease-in-out;
+}
+.bannImg:hover{
+    animation: rotate 1s ease-out 1;
+}
+@keyframes rotate {
+  from {
+    transform: rotatey(0deg);
+  }
+  to {
+    transform: rotatey(180deg);
+  }
+}
+            /* BlogBanner Section End */
+            /* ShopContent Section Start */
+.sandal{
+    width: 30px !important;
+    height: 30px !important;
+    background-color:  #E4B17C;
+    color: #E4B17C;
+}   
+.brown{
+    width: 30px !important;
+    height: 30px !important;
+    background-color:  #7E4225;
+}         
+.black{
+    width: 30px !important;
+    height: 30px !important;
+    background-color:  black;
+}
+.all{
+    width: 30px !important;
+    height: 30px !important;
+    background-color:  white;
+    border: 1px solid black;
+}
+.showCards{
+    width: 250px;
+}
+            /* ShopContent Section End */

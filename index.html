@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woody</title>
+    <!-- Bootrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Animation Link-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Swiper Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- External Style Sheet-->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+</head>
+
+<body>
+    <div class="Overall">
+        <!-- NavBar Section Start -->
+        <nav class="navbar navbar-expand-lg mb-5 py-sm-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./Assets/images/logo.png" alt="logo"
+                        class="img-fluid me-lg-5 ps-xl-5 pe-lg-5 ms-sm-3 ms-sm-5">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-lg-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 text-center" id="navFirstUl">
+                        <li class="nav-item ms-xl-5">
+                            <a class="nav-link active fw-semibold ms-xl-5" aria-current="page" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="shop.html">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="blog.html">BLOG</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fw-semibold" aria-current="page" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                    <!-- SearchBar Section Start -->
+                    <div class="SearchBar" id="SearchBar">
+                        <input type="search" class="search fw-semibold ps-3" placeholder="Search..." id="searchInput">
+                        <h3 class="searchClose" id="searchClose"><ion-icon name="close-outline"></ion-icon></h3>
+                    </div>
+                    <!-- SearchBar Section End -->
+                    <ul class="d-flex me-auto mb-2 mb-lg-0 navSecondUl">
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="#"><ion-icon name="search"
+                                    class="navIcon" id="SearchIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="login.html"><ion-icon name="person-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold wishIcon" aria-current="page" href="#"><ion-icon name="heart-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold position-relative cart-icon" aria-current="page"><ion-icon
+                                    name="bag-handle-outline" class="navIcon"></ion-icon>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill badge product-count">
+                                    0
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- NavBar Section End -->
+            <!-- Add To Cart Section Start -->
+                <div class="carts AddToCart">
+                    <div class="cart-title AddToCartTiTle">Shopping Cart</div>
+                        <div class="cart-content AddToCartContent">
+                                        
+                        </div>
+                        <div class="total">
+                                <div class="total-title">Total</div>
+                                <div class="total-price">Rs.0</div>
+                        </div>
+                            <button class="btn-buy" id="place-order-btn">Place Order</button>
+                            <ion-icon name="close" id="cart-close"></ion-icon>
+                </div>
+                
+                <!-- Order confirmation message -->
+                    <div id="order-popup" class="popup-overlay">
+                        <div class="popup-content">
+                            <p>✅ Order placed successfully!</p>
+                            <button id="close-popup">OK</button>
+                        </div>
+                    </div>
+            <!-- Add To Cart Section End -->
+            <!-- Wish Section Start -->
+                <div class="Wish WishToCart">
+                    <div class="WishCart-title WishToCartTiTle">Wish List</div>
+                        <div class="Wish-content WishToCartContent">
+                                        
+                        </div>
+                         <ion-icon name="close" id="wishClose"></ion-icon>
+                </div>
+            <!-- Wish Section End -->
+        <!-- Banner Section Start -->
+        <section>
+            <div class="Banner mt-3">
+                <div class="container">
+                    <p class="leftArr" onclick="rollCurosel()"><ion-icon name="chevron-back-outline"
+                            class="ArrIcon"></ion-icon></p>
+                    <p class="RightArr" onclick="rollCurosel()"><ion-icon name="chevron-forward-outline"
+                            class="ArrIcon"></ion-icon></p>
+                    <div class="row banner-row activeBanner" id="BannerRowOne">
+                        <div class="col-sm BannerDiv mt-5 pt-5 ms-sm-5">
+                            <p class="Jost12px" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1200">Up
+                                To 15% OFF</p>
+                            <h1 class="Vala54px mb-4" data-aos="fade-up" data-aos-easing="linear"
+                                data-aos-duration="1250">Rustic Charm <br> Essentials</h1>
+                            <p class="Jost12px" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1300">
+                                Premium wood finishes, offering a refined yet rustic touch to <br>
+                                any room.</p>
+                            <a href="#"><button class="shopBtn py-3 px-5 my-4 fw-semibold" data-aos="fade-up"
+                                    data-aos-easing="linear" data-aos-duration="1400">SHOP NOW</button></a>
+                        </div>
+                        <div class="col-sm">
+                            <img src="./Assets/images/img49.webp" alt="img49" class="img-fluid" data-aos="fade-up"
+                                data-aos-easing="linear" data-aos-duration="1500">
+                        </div>
+                    </div>
+                    <div class="row banner-row" id="BannerRowTwo">
+                        <div class="col-sm BannerDiv mt-5 pt-5 ms-sm-5">
+                            <p class="Jost12px" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1200">
+                                SPRING COLLECTION</p>
+                            <h1 class="Vala54px mb-4" data-aos="fade-up" data-aos-easing="linear"
+                                data-aos-duration="1250">Wooden <br> Highlights</h1>
+                            <p class="Jost12px" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1300">
+                                Premium wood finishes, offering a refined yet rustic touch to <br>
+                                any room.</p>
+                            <a href="#"><button class="shopBtn py-3 px-5 my-4 fw-semibold" data-aos="fade-up"
+                                    data-aos-easing="linear" data-aos-duration="1400">SHOP NOW</button></a>
+                        </div>
+                        <div class="col-sm">
+                            <img src="./Assets/images/img50.webp" alt="img50" class="img-fluid" data-aos="fade-up"
+                                data-aos-easing="linear" data-aos-duration="1500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Banner Section End -->
+        <!-- NewArrival Section Start -->
+        <section>
+            <div class="NewArrival">
+                <div class="container my-5">
+                    <div class="row text-center">
+                        <h1 class="Jost30px">New Arrivals</h1>
+                        <p class="color-ash Jost20px">Get our great quality produts in our official store today</p>
+                    </div>
+                    <div class="swiper myNewArrSwiper">
+                        <div class="swiper-wrapper" id="IndexContainer">                    
+                                                                                                                                                                                                                                                           
+                            
+                        <!--   <div class="swiper-slide cards text-center">
+                                <div class="imgContainer">
+                                    <img src="./Assets/images/img59.webp" alt="img59" class="img-fluid">
+                                    <div class="cardInner">
+                                        <h3><span class="me-lg-2"><ion-icon name="bag-add-outline"
+                                                    class="cartBag"></ion-icon></span><span><ion-icon name="heart-outline"
+                                                    class="cartWish"></ion-icon></span></h3>
+                                    </div>
+                                    <div class="overlay"></div>
+                                </div>
+                                <p class="Jost20px fw-semibold mt-2">Sustainably Yours</p>
+                                <h6 class="color-brown lead">&#8377; 2200 <span class="color-ash"><del>&#8377;2300</del></span>
+                                </h6>
+                            </div>-->
+                        </div>
+                        <div class="swiper-pagination">
+                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- NewArrival Section End -->
+        <!-- Woodland Section Start -->
+        <section>
+            <div class="Woodland py-5 text-center">
+                <h2 class="Jost20px color-ash mt-5">DISCOVER OUR STORE</h2>
+                <h1 class="Vala54px" style="color: white;">Woodland Wonders</h1>
+                <a href="#"><button class="whiteBtn py-3 px-5 my-4 fw-semibold">SHOP NOW</button></a>
+            </div>
+        </section>
+        <!-- Woodland Section End -->
+        <!-- PerfectCraft Section Start -->
+        <div class="PerfectCraft py-5">
+            <div class="container">
+                <div class="row m-4">
+                    <div class="col">
+                        <h5 class="color-yellow"><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span></h5>
+                        <h1 class="Vala54px my-4">Handcrafted Perfection</h1>
+                        <p class="Jost20px color-ash fw-medium">Morbi eget congue lectus. Donec eleifend ultricies urna 
+                            eteuismod. Sed consectetur tellus eget odio aliquet, vel vestibulum tellus sollicitudin.
+                            Morbi maximus metus eu eros tincidunt, vitae mollis ante imperdiet.</p>
+                        <a href="#"><button class="whiteBtn py-3 px-5 my-4 fw-semibold">SHOP NOW</button></a>
+                    </div>
+                    <div class="col">
+                        <img src="./Assets/images/img38.png" alt="img38" class="img-fluid PerfectCraftImg">
+                    </div>
+                </div>
+                <div class="row m-4 pt-5">
+                    <div class="col">
+                        <img src="./Assets/images/img14.jpg" alt="img14" class="img-fluid PerfectCraftImg">
+                    </div>
+                    <div class="col ms-3">
+                        <h5 class="color-yellow"><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span></h5>
+                        <h1 class="Vala54px my-4">Elegance In Every Grain</h1>
+                        <p class="Jost20px color-ash fw-medium">Morbi eget congue lectus. Donec eleifend ultricies urna 
+                            eteuismod. Sed consectetur tellus eget odio aliquet, vel vestibulum tellus sollicitudin.
+                            Morbi maximus metus eu eros tincidunt, vitae mollis ante imperdiet.</p>
+                        <a href="#"><button class="whiteBtn py-3 px-5 my-4 fw-semibold">SHOP NOW</button></a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <!-- PerfectCraft Section End -->
+        <!-- PeopleLove Section Start -->
+        <section>
+            <div class="PeopleLove">
+                <div class="container">
+                    <div class="row text-center">
+                        <h1 class="Jost30px">Why do people love us?</h1>
+                    </div>
+                    <div class="row my-5">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide people1 p-5">
+                                    <h5 class="color-yellow my-3"><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span></h6>
+                                    <p class="Jost15px color-ash">Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal
+                                        tap stat strep screen violence joints symptoms x-ray...
+                                    </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <img src="./Assets/images/img39.jpg" alt="img39" class="img-fluid peopleImg">
+                                                </div>
+                                                <div class="col align-self-center mt-4">
+                                                    <h6> <span class="fw-semibold">ANN SMITH</span></h6>
+                                                    <p><span class="fw-normal">Photographer</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="swiper-slide people2 p-5">
+                                    <h5 class="color-yellow my-3"><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span></h6>
+                                    <p class="Jost15px color-ash">Fantastic makeup, went on great and i felt so much better protected all day! Would
+                                        recommend to anyone. Their staff is highly professtional and...
+                                    </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <img src="./Assets/images/img41.jpg" alt="img41" class="img-fluid peopleImg">
+                                                </div>
+                                                <div class="col align-self-center mt-4">
+                                                    <h6> <span class="fw-semibold">SAITAMA</span></h6>
+                                                    <p><span class="fw-normal">Developer</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="swiper-slide people3 p-5">
+                                    <h5 class="color-yellow my-3"><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span></h6>
+                                    <p class="Jost15px color-ash">I came to Dr Thiara with lumpy lips which I had done from 
+                                        elsewhere. He was excellent in discussing my options and was able to fix my...
+                                    </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <img src="./Assets/images/img40.jpg" alt="img40" class="img-fluid peopleImg">
+                                                </div>
+                                                <div class="col align-self-center mt-4">
+                                                    <h6> <span class="fw-semibold">COLINTON</span></h6>
+                                                    <p><span class="fw-normal">Nutricionist</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="swiper-slide people4 p-5">
+                                    <h5 class="color-yellow my-3"><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span><span class="me-1"><ion-icon name="star"></ion-icon></span></h6>
+                                    <p class="Jost15px color-ash">Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal
+                                        tap stat strep screen violence joints symptoms x-ray...
+                                    </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <img src="./Assets/images/img42.jpg" alt="img42" class="img-fluid peopleImg">
+                                                </div>
+                                                <div class="col align-self-center mt-4">
+                                                    <h6> <span class="fw-semibold">SHETTYJAMIE</span></h6>
+                                                    <p><span class="fw-normal">Designer</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination">
+                                <span class="swiper-pagination-bullet"></span>
+                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PeopleLove Section End -->
+        <!-- BlogPost Section Start -->
+        <section>
+            <div class="BlogPost">
+                <div class="container">
+                    <div class="row text-center">
+                        <h1 class="Jost30px">Why do people love us?</h1>
+                    </div>
+                    <div class="row my-5">
+                        <div class="swiper myBlogSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" data-title="Why Sustainable Wood Furniture Matters for a Gr...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img60.jpg" alt="img60" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Why Sustainable Wood Furniture Matters for a Gr...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="The Art of Minimalism with Solid Wood Pieces">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img9.jpg" alt="img9" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>The Art of Minimalism with Solid Wood Pieces</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="Rustic or Modern? Choosing the Perfect Wood Fur...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img4.jpg" alt="img4" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Rustic or Modern? Choosing the Perfect Wood Fur...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="10 Tips for Caring for Your Wood Furniture to...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img61.jpg" alt="img61" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>10 Tips for Caring for Your Wood Furniture to...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="Top 5 Wood Types for Durable and Beautiful Furn...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img62.webp" alt="img62" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Top 5 Wood Types for Durable and Beautiful Furn...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="From Forest to Home: The Journey of Handcrafted...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img63.webp" alt="img63" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>From Forest to Home: The Journey of Handcrafted...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="The Beauty of Grain: Why Wood Furniture Never G...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img64.jpg" alt="img64" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>The Beauty of Grain: Why Wood Furniture Never G...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="Sustainable Style: How to Choose Eco-Friendly W...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img12.jpg" alt="img12" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Sustainable Style: How to Choose Eco-Friendly W...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="DIY Wood Care: Best Oils and Waxes for Natural ...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img66.jpg" alt="img66" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>DIY Wood Care: Best Oils and Waxes for Natural ...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="Natural wood furnThe Art of Minimalism with Sol...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img9.jpg" alt="img9" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Natural wood furnThe Art of Minimalism with Sol...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="Essential Guide to Matching Wood Furniture with...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img67.jpg" alt="img67" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Essential Guide to Matching Wood Furniture with...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="How to Create a Warm, Inviting Home with Natural...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img68.jpg" alt="img68" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>How to Create a Warm, Inviting Home with Natural...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-title="Wood vs. Alternatives: Why Solid Wood Furniture...">
+                                    <div class="myBlogImg">
+                                        <img src="./Assets/images/img69.jpg" alt="img69" class="img-fluid">
+                                        <div class="BlogImgOverlay"></div>
+                                    </div>
+                                    <div class="myBlogCon py-3 me-4">
+                                        <p class="Jost12px">2024-11-11</p>
+                                        <h5>Wood vs. Alternatives: Why Solid Wood Furniture...</h5>
+                                        <a href="#" class="Jost12px">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination">
+                                <span class="swiper-pagination-bullet"></span>
+                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- BlogPost Section End -->
+        <!-- Footer Section Start -->
+        <footer>
+            <div class="Footer mt-4 pt-5 ">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-lg">
+                            <img src="./Assets/images/logo.png" alt="logo" class="img-fluid">
+                            <h2 class="my-3">(+84) 1800 68 68</h2>
+                            <p class="Jost12px">Address : 1234 Heaven Stress, USA.</p>
+                            <p class="Jost12px">Email: hello@domain.com</p>
+                            <p class="Jost12px">Fax: (+100) 123 456 7890</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">
+                            <p class="fw-semibold">INFO</p>
+                            <a href="#"><p class="Jost12px">Custom Service</p></a>
+                            <a href="#"><p class="Jost12px">F.A.Q.'s</p></a>
+                            <a href="#"><p class="Jost12px">Order Tracking</p></a>
+                            <a href="#"><p class="Jost12px">Contact Us</p></a>
+                            <a href="#"><p class="Jost12px">Events</p></a>
+                            <a href="#"><p class="Jost12px">Popular</p></a>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">
+                            <p class="fw-semibold">SERVICES</p>
+                            <a href="#"><p class="Jost12px">Sitemap</p></a>
+                            <a href="#"><p class="Jost12px">Privacy Policy</p></a>
+                            <a href="#"><p class="Jost12px">Your Account</p></a>
+                            <a href="#"><p class="Jost12px">Advanced Search</p></a>
+                            <a href="#"><p class="Jost12px">Term & Condition</p></a>
+                            <a href="#"><p class="Jost12px">Contact Us</p></a>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">  
+                            <p class="fw-semibold">ACCOUNT</p>
+                            <a href="#"><p class="Jost12px">About Us</p></a>
+                            <a href="#"><p class="Jost12px">Delivery Information</p></a>
+                            <a href="#"><p class="Jost12px">Privacy Policy</p></a>
+                            <a href="#"><p class="Jost12px">Discount</p></a>
+                            <a href="#"><p class="Jost12px">Custom Service</p></a>
+                            <a href="#"><p class="Jost12px">Term & Condition</p></a>
+                        </div>
+                        <div class="col-sm mt-3 mt-sm-0">
+                            <p class="fw-semibold">NEWSLETTERS</p>
+                            <p class="Jost15px color-ash">Join 40.00+ Subscribers and get a new discount coupon</p>
+                            <h5 class="align-middle">
+                                <div class="d-flex">
+                                        <input type="email" id="footEmailInput" class="footEmailInput py-2 ps-1" placeholder="Your email adress...">                                                                    
+                                        <span class="FootEmailIcon"><ion-icon name="mail-outline" class="EmailIcon"></ion-icon></span>
+                                </div>
+                            </h5>
+                            <p class="mt-3">
+                                <span><ion-icon name="logo-xing" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-dribbble" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-behance" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-instagram" class="FootLogoIcons ms-2"></ion-icon></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="footSecondRow d-sm-flex justify-content-between">
+                            <p class="mt-4">&copy; Copyright 2025 | <span class="color-ash">Woody </span> By SumoTheme. <span class="color-ash">Powered by Shopify.</span></p>
+                            <p class="mt-4"><img src="./Assets/images/img44.webp" alt="img44" class="img-fluid"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+
+    <!-- External Script Link -->
+    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/shop.js"></script>
+    <script src="./Assets/js/cart.js"></script>
+    <!-- Swiper Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Animation Link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Bootrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <!-- Icon Link -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woody</title>
+    <!-- Bootrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Animation Link-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Swiper Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- External Style Sheet-->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/pages.css">
+</head>
+
+<body>
+    <div class="Overall">
+        <!-- NavBar Section Start -->
+        <nav class="navbar navbar-expand-lg mb-5 py-sm-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./Assets/images/logo.png" alt="logo"
+                        class="img-fluid me-lg-5 ps-xl-5 pe-lg-5 ms-sm-3 ms-sm-5">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-lg-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 text-center" id="navFirstUl">
+                        <li class="nav-item ms-xl-5">
+                            <a class="nav-link active fw-semibold ms-xl-5" aria-current="page" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="shop.html">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="blog.html">BLOG</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fw-semibold" aria-current="page" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                    <!-- SearchBar Section Start -->
+                    <div class="SearchBar" id="SearchBar">
+                        <input type="search" class="search fw-semibold ps-3" placeholder="Search...">
+                        <h3 class="searchClose" id="searchClose"><ion-icon name="close-outline"></ion-icon></h3>
+                    </div>
+                    <!-- SearchBar Section End -->
+                    <ul class="d-flex me-auto mb-2 mb-lg-0 navSecondUl">
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="#"><ion-icon name="search"
+                                    class="navIcon" id="SearchIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="login.html"><ion-icon name="person-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold wishIcon" aria-current="page" href="#"><ion-icon name="heart-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold position-relative cart-icon" aria-current="page"><ion-icon
+                                    name="bag-handle-outline" class="navIcon"></ion-icon>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill badge product-count">
+                                    
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- NavBar Section End -->
+            <!-- Add To Cart Section Start -->
+                <div class="carts AddToCart">
+                    <div class="cart-title AddToCartTiTle">Shopping Cart</div>
+                        <div class="cart-content AddToCartContent">
+                                        
+                        </div>
+                        <div class="total">
+                                <div class="total-title">Total</div>
+                                <div class="total-price">Rs.0</div>
+                        </div>
+                            <button class="btn-buy" id="place-order-btn">Place Order</button>
+                            <ion-icon name="close" id="cart-close"></ion-icon>
+                </div>
+
+            <!-- Add To Cart Section End -->
+            <!-- Wish Section Start -->
+                <div class="Wish WishToCart">
+                    <div class="WishCart-title WishToCartTiTle">Wish List</div>
+                        <div class="Wish-content WishToCartContent">
+                                        
+                        </div>
+                         <ion-icon name="close" id="wishClose"></ion-icon>
+                </div>
+            <!-- Add To Cart Section End -->
+        <!-- BlogBanner Section Start -->
+        <div class="AboutBanner text-center py-5 clrWhite">
+            <div class="my-5 py-5">
+                <h1 class="mb-3">About Us</h1>
+                <h6>Home <ion-icon name="chevron-forward-outline"></ion-icon> Pages  <ion-icon name="chevron-forward-outline"></ion-icon> About Us</h6>
+            </div>
+        </div>
+        <!-- BlogBanner Section End -->
+        <!-- AboutContent Section Start -->
+        <div class="AboutContent container mt-5">
+            <div class="row">
+                <h1>Unique & Stylist Fashion We Are An Awesome Agency.</h1>
+                <p class="color-ash my-3">I am a highly organised and motivated professional Fashion Designer 
+                    with a wealth of experience in a range of photographic styles and services. Just run 
+                    your Fashion Store which will be a reflection of you a sexy and confident woman that 
+                    shines with her unique style. Our goal is to make fashion as easy possible. We bring 
+                    you the best of glam and sexy clothes while keeping in mind that high quality things 
+                    arent always too expensive. Our goal is to make fashion as easy as possible, that is 
+                    why we add carefully selected products on a daily basis, and this is essential for us. 
+                    This is how you keep up with the times in style! We ship worldwide & space!
+                </p>
+                <a href="shop.html" class="fw-semibold"><span style="border-bottom: 2px solid;">Explore More</span></a>
+            </div>
+            <div class="row my-5">
+                <div class="playImgDiv">
+                    <img src="./Assets/images/img79.webp" alt="img79" class="img-fluid">
+                </div>            
+                    <span class="play"><a href="https://www.youtube.com/embed/J-4G6ZuXbbQ?si=YvNqHF2zfh42WKwb" width="560" height="315"><ion-icon name="play" class="playIcon"></ion-icon></a></span>
+            </div>
+            <div class="row text-center">
+                <h2>Meet Our Teams</h2>
+                <p class="color-ash">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+                    <br> ut fermentum massa justo. condimentum nibh.</p>
+                <div class="container mt-3">
+                    <div class="swiper aboutSwiper">
+                        <div class="swiper-wrapper mb-4">
+                            <div class="swiper-slide">
+                                <div class="aboImg"><img src="./Assets/images/img80.jpg" alt="img80" class="img-fluid"></div>
+                                <h4 class="mt-2">Adrian Stone</h4>
+                                <p class="color-ash">CEO</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aboImg"><img src="./Assets/images/img81.jpg" alt="img81" class="img-fluid"></div>
+                                <h4 class="mt-2">Karen Ryan</h4>
+                                <p class="color-ash">Designer</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aboImg"><img src="./Assets/images/img82.jpg" alt="img82" class="img-fluid"></div>
+                                <h4 class="mt-2">Saga Noren</h4>
+                                <p class="color-ash">Developer</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="aboImg"><img src="./Assets/images/img83.jpg" alt="img83" class="img-fluid"></div>
+                                <h4 class="mt-2">David</h4>
+                                <p class="color-ash">Developer</p>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination">
+                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center my-5">
+                <h2>Store In The World</h2>
+                <p class="color-ash">Quisque vitae nibh iaculis neque blandit hendrerit euismod.Maecenas 
+                    sit amet purus eget ipsum elementum venenatis. Aenean maximus urna magna, quis rutrum 
+                    mi semper non. Cras rhoncus elit non arcu hendrerit rhoncus sit amet purus eget ipsum.
+                </p>
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-sm mb-3 mb-sm-0">
+                            <div class="aboImg"><img src="./Assets/images/img84.webp" alt="img84" class="img-fluid"></div>
+                        </div>
+                        <div class="col">
+                            <div class="aboImg"><img src="./Assets/images/img85.webp" alt="img85" class="img-fluid"></div>
+                            <div class="aboImg mt-4"><img src="./Assets/images/img86.webp" alt="img86" class="img-fluid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col aboCol">
+                    <h6>NEWYORK STORE</h6>
+                    <ul class="color-ash">
+                        <li class="mt-3">Brooklyn Law School. 250 Joralemon</li>
+                        <li class="mt-3">Monday to Friday 09:30 - 17:30</li>
+                        <li class="mt-3">Hello@domain.com</li>
+                    </ul>
+                </div>
+                <div class="col aboCol">
+                    <h6>AMSTERDAM STORE</h6>
+                    <ul class="color-ash">
+                        <li class="mt-3">Roeterseiland Campus Building E, 10th Amsterdam</li>
+                        <li class="mt-3">Monday to Friday 09:30 - 17:30</li>
+                        <li class="mt-3">Hello@domain.com</li>
+                    </ul>
+                </div>
+                <div class="col aboCol">
+                    <h6>LONDON STORE</h6>
+                    <ul class="color-ash">
+                        <li class="mt-3">15-17 Charlotte Street, London</li>
+                        <li class="mt-3">Monday to Friday 09:30 - 17:30</li>
+                        <li class="mt-3">Hello@domain.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- AboutContent Section End -->
+        <!-- Footer Section Start -->
+        <footer>
+            <div class="Footer mt-4 pt-5 ">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-lg">
+                            <img src="./Assets/images/logo.png" alt="logo" class="img-fluid">
+                            <h2 class="my-3">(+84) 1800 68 68</h2>
+                            <p class="Jost12px">Address : 1234 Heaven Stress, USA.</p>
+                            <p class="Jost12px">Email: hello@domain.com</p>
+                            <p class="Jost12px">Fax: (+100) 123 456 7890</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">
+                            <p class="fw-semibold">INFO</p>
+                            <a href="#"><p class="Jost12px">Custom Service</p></a>
+                            <a href="#"><p class="Jost12px">F.A.Q.'s</p></a>
+                            <a href="#"><p class="Jost12px">Order Tracking</p></a>
+                            <a href="#"><p class="Jost12px">Contact Us</p></a>
+                            <a href="#"><p class="Jost12px">Events</p></a>
+                            <a href="#"><p class="Jost12px">Popular</p></a>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">
+                            <p class="fw-semibold">SERVICES</p>
+                            <a href="#"><p class="Jost12px">Sitemap</p></a>
+                            <a href="#"><p class="Jost12px">Privacy Policy</p></a>
+                            <a href="#"><p class="Jost12px">Your Account</p></a>
+                            <a href="#"><p class="Jost12px">Advanced Search</p></a>
+                            <a href="#"><p class="Jost12px">Term & Condition</p></a>
+                            <a href="#"><p class="Jost12px">Contact Us</p></a>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">  
+                            <p class="fw-semibold">ACCOUNT</p>
+                            <a href="#"><p class="Jost12px">About Us</p></a>
+                            <a href="#"><p class="Jost12px">Delivery Information</p></a>
+                            <a href="#"><p class="Jost12px">Privacy Policy</p></a>
+                            <a href="#"><p class="Jost12px">Discount</p></a>
+                            <a href="#"><p class="Jost12px">Custom Service</p></a>
+                            <a href="#"><p class="Jost12px">Term & Condition</p></a>
+                        </div>
+                        <div class="col-sm mt-3 mt-sm-0">
+                            <p class="fw-semibold">NEWSLETTERS</p>
+                            <p class="Jost15px color-ash">Join 40.00+ Subscribers and get a new discount coupon</p>
+                            <h5 class="align-middle">
+                                <div class="d-flex">
+                                        <input type="email" id="footEmailInput" class="footEmailInput py-2 ps-1" placeholder="Your email adress...">                                                                    
+                                        <span class="FootEmailIcon"><ion-icon name="mail-outline" class="EmailIcon"></ion-icon></span>
+                                </div>
+                            </h5>
+                            <p class="mt-3">
+                                <span><ion-icon name="logo-xing" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-dribbble" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-behance" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-instagram" class="FootLogoIcons ms-2"></ion-icon></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="footSecondRow d-sm-flex justify-content-between">
+                            <p class="mt-4">&copy; Copyright 2025 | <span class="color-ash">Woody </span> By SumoTheme. <span class="color-ash">Powered by Shopify.</span></p>
+                            <p class="mt-4"><img src="./Assets/images/img44.webp" alt="img44" class="img-fluid"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+
+    <!-- External Script Link -->
+    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/shop.js"></script>
+    <script src="./Assets/js/cart.js"></script>
+    <!-- Swiper Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Animation Link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Bootrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <!-- Icon Link -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>

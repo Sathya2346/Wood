@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woody</title>
+    <!-- Bootrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Animation Link-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Swiper Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- External Style Sheet-->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+<style>
+.loginOverAll{
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    padding: 10px;
+    width: 95%;
+    background: black;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.login-container button:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 250px;
+}
+
+</style>
+</head>
+<body>
+    <div class="Overall">
+        <!-- NavBar Section Start -->
+        <nav class="navbar navbar-expand-lg mb-5 py-sm-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./Assets/images/logo.png" alt="logo"
+                        class="img-fluid me-lg-5 ps-xl-5 pe-lg-5 ms-sm-3 ms-sm-5">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-lg-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 text-center" id="navFirstUl">
+                        <li class="nav-item ms-xl-5">
+                            <a class="nav-link active fw-semibold ms-xl-5" aria-current="page" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="shop.html">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="blog.html">BLOG</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fw-semibold" aria-current="page" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                    <!-- SearchBar Section Start -->
+                    <div class="SearchBar" id="SearchBar">
+                        <input type="search" class="search fw-semibold ps-3" placeholder="Search..." id="searchInput">
+                        <h3 class="searchClose" id="searchClose"><ion-icon name="close-outline"></ion-icon></h3>
+                    </div>
+                    <!-- SearchBar Section End -->
+                    <ul class="d-flex me-auto mb-2 mb-lg-0 navSecondUl">
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="#"><ion-icon name="search"
+                                    class="navIcon" id="SearchIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="login.html"><ion-icon name="person-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold wishIcon" aria-current="page" href="#"><ion-icon name="heart-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold position-relative cart-icon" aria-current="page"><ion-icon
+                                    name="bag-handle-outline" class="navIcon"></ion-icon>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill badge product-count">
+                                    0
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- NavBar Section End -->
+            <!-- Add To Cart Section Start -->
+                <div class="carts AddToCart">
+                    <div class="cart-title AddToCartTiTle">Shopping Cart</div>
+                        <div class="cart-content AddToCartContent">
+                                        
+                        </div>
+                        <div class="total">
+                                <div class="total-title">Total</div>
+                                <div class="total-price">Rs.0</div>
+                        </div>
+                            <button class="btn-buy" id="place-order-btn">Place Order</button>
+                            <ion-icon name="close" id="cart-close"></ion-icon>
+                </div>
+                
+                <!-- Order confirmation message -->
+                    <div id="order-popup" class="popup-overlay">
+                        <div class="popup-content">
+                            <p>✅ Order placed successfully!</p>
+                            <button id="close-popup">OK</button>
+                        </div>
+                    </div>
+            <!-- Add To Cart Section End -->
+            <!-- Wish Section Start -->
+                <div class="Wish WishToCart">
+                    <div class="WishCart-title WishToCartTiTle">Wish List</div>
+                        <div class="Wish-content WishToCartContent">
+                                        
+                        </div>
+                         <ion-icon name="close" id="wishClose"></ion-icon>
+                </div>
+            <!-- Wish Section End -->
+    <div class="loginOverAll">
+        <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Popup -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="popup-message"></span>
+                <button onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+    function login() {
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let popup = document.getElementById("popup");
+    let message = document.getElementById("popup-message");
+
+    // Simple check (demo purposes)
+    if (username != " " && password != " ") {
+        message.textContent = "Login successful! Welcome " + username + " 🎉";
+    } else {
+        message.textContent = "Invalid username or password ❌";
+    }
+
+    popup.style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+    <!-- External Script Link -->
+    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/shop.js"></script>
+    <script src="./Assets/js/cart.js"></script>
+    <!-- Swiper Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Animation Link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Bootrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <!-- Icon Link -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>

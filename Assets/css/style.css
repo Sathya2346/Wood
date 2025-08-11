@@ -1,0 +1,709 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Vala';
+    src: url('/Assets/fonts/fonts/fonnts.com-Vala_W05_Regular.ttf') format('woff2'),
+        url('fonts/vala-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Jost30px {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    line-height: 39px;
+}
+
+.color-ash {
+    color: #7F7F7F;
+}
+
+.color-brown {
+    color: #987156;
+}
+
+.color-yellow {
+    color: #FFC107;
+}
+
+.Jost15px {
+    font-size: 15px;
+    font-weight: 500;
+    list-style: 27px;
+}
+
+.Jost20px {
+    font-size: 20px;
+}
+
+.color-white {
+    color: white;
+}
+
+/* NavBar Section Start */
+nav>div {
+    position: fixed !important;
+    top: 0px;
+    height: 15vh;
+    background-color: white;
+    z-index: 100;
+}
+
+.navIcon {
+    width: 28px;
+    height: 28px;
+}
+
+.badge {
+    background-color: #987156;
+}
+
+.search {
+    width: 300px;
+    height: 8vh;
+    border: #E5E5E5 1px solid;
+    border-radius: 5px;
+}
+
+.searchClose {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.SearchBar {
+    display: none;
+}
+
+/* NavBar Section End */
+/* Banner Section Start */
+.Banner {
+    background-color: #F8F8F8;
+}
+
+.Jost12px {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #8F8F8F;
+}
+
+.Vala54px {
+    font-family: 'Vala', serif;
+    font-size: 54px;
+    line-height: 65px;
+    font-weight: 400;
+    color: black;
+}
+
+.shopBtn {
+    font-size: 14px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 6px;
+}
+
+.shopBtn:hover {
+    color: black;
+    background-color: white;
+    border: 1.5px solid black;
+}
+
+.ArrIcon {
+    font-size: 25px;
+    background-color: white;
+    padding: 18px;
+    border-radius: 30px;
+}
+
+.leftArr {
+    position: fixed;
+    top: 350px;
+    left: 15px;
+}
+
+.RightArr {
+    position: fixed;
+    top: 350px;
+    right: 15px;
+}
+
+.banner-row {
+    display: none;
+}
+
+.banner-row.activeBanner {
+    display: flex;
+    opacity: 1;
+}
+
+/* Banner Section End */
+/* NewArrival Section Start */
+.cartBag,
+.cartWish {
+    padding: 6px;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.imgContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.imgContainer img {
+    display: block;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.cardInner {
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 80px;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.4s ease, top 0.4s ease;
+    z-index: 2;
+}
+
+.imgContainer:hover .cardInner {
+    opacity: 1;
+    top: 80px;
+}
+
+.imgContainer:hover .overlay {
+    opacity: 1;
+}
+
+/* NewArrival Section End */
+/* Woodland Section Start */
+.Woodland {
+    background-image: url(../images/img70.jpg);
+    background-size: cover;
+}
+
+/* Woodland Section End */
+/* PerfectCraft Section Start */
+.whiteBtn {
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 6px;
+}
+
+.whiteBtn:hover {
+    color: white;
+    background-color: black;
+}
+
+.PerfectCraftImg {
+    transition: transform 0.8s ease-in-out;
+}
+
+.PerfectCraftImg:hover {
+    transform: scale(1.1);
+}
+
+/* PerfectCraft Section End */
+/* PeopleLove Section Start */
+.swiper-pagination-bullet {
+    background-color: #CCCCCC;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: black;
+}
+
+.people1 {
+    background-color: #FFF7E1;
+}
+
+.people2 {
+    background-color: #F4ECE6;
+}
+
+.people3 {
+    background-color: #F4F0E6;
+}
+
+.people4 {
+    background-color: #FFF7E1;
+}
+
+.peopleImg {
+    border-radius: 50%;
+}
+
+/* PeopleLove Section End */
+/* BlogPost Section Start */
+.myBlogImg {
+    position: relative;
+    overflow: hidden;
+    height: 48vh;
+    width: auto;
+    margin: 10px;
+}
+
+.myBlogImg>img {
+    height: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.myBlogImg:hover .myBlogImg>img {
+    transform: scale(1.05);
+}
+
+.BlogImgOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    /* Transparent initially */
+    transition: background-color 0.3s ease;
+}
+
+.myBlogImg:hover .BlogImgOverlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.myBlogCon {
+    position: relative;
+    background-color: white;
+    margin-top: -80px;
+    margin-left: 10px;
+}
+
+/* BlogPost Section End */
+/* Footer Section Start */
+.Footer {
+    background-color: #FFF6EF;
+}
+
+.footEmailInput {
+    background-color: #FFF6EF;
+    border: 1px solid #8F8F8F;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.FootEmailIcon {
+    text-align: center;
+    color: white;
+    width: 42px;
+    height: 42px;
+    background-color: black;
+    padding: 10px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.FootEmailIcon>.EmailIcon {
+    width: 100%;
+    height: 100%;
+}
+
+.FootLogoIcons {
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    border: 1px solid #8F8F8F;
+    border-radius: 20px;
+    color: #494646;
+}
+
+.FootLogoIcons:hover {
+    background-color: black;
+    color: white;
+}
+
+.footSecondRow {
+    border-top: 1px solid #b1a8a8;
+}
+
+/* Footer Secion End */
+
+/* Add to Cart Function Code */
+.cart-icon{
+    cursor: pointer;
+}
+.AddToCart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px gray;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* It's Work On JS */
+.cart-active {
+    right: 0;
+    transition: 0.5s;
+}
+
+.AddToCartTiTle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 20px;
+}
+
+.cart-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+
+.cart-img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.price-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-item-title {
+    font-size: 1rem;
+    color: #5DADE2;
+    font-weight: 500;
+}
+
+.cart-price {
+    font-weight: 600;
+}
+
+.cart-quantity {
+    outline: none;
+    border: 1px solid gray;
+    width: 2.4rem;
+    text-align: center;
+}
+
+.cart-remove {
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+
+/* Total */
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.total-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.total-price {
+    margin-left: 0.5rem;
+}
+
+.btn-buy {
+    padding: 10px 16px;
+    background-color: gray;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#cart-close, #wishClose {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+}
+        /* Wish Section Start */
+
+.wishIcon{
+    cursor: pointer;
+}
+.WishToCart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px gray;
+    z-index: 110;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.wish-active {
+    right: 0;
+    transition: 0.5s;
+}
+.WishToCartTiTle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 20px;
+}
+.Wish-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+.cart-img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border: 1px solid gray;
+    padding: 5px;
+}
+.wish-food-title{
+    font-size: 1rem;
+    color: #5DADE2;
+    font-weight: 500;
+}
+
+.cart-price {
+    font-weight: 600;
+}
+.wish-remove{
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+
+        /* Place Order Section*/        
+/* Popup overlay background */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup box */
+.popup-content {
+    background: #d4edda;
+    color: #155724;
+    padding: 20px 30px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Button inside popup */
+.popup-content button {
+    margin-top: 12px;
+    padding: 6px 14px;
+    background: #155724;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: #0f3e1b;
+}
+     
+/* Media Query */
+
+@media only screen and (min-width:1281px) {
+
+    /* BlogPost Section Start */
+    .myBlogImg {
+        height: 70vh;
+    }
+
+    /* BlogPost Section End */
+}
+
+@media only screen and (max-width:1030px) {
+
+    /* BlogPost Section Start */
+    .myBlogImg {
+        height: 70vh;
+    }
+
+    /* BlogPost Section End */
+}
+
+@media only screen and (max-width:770px) {
+
+    /* NavBar Section Start */
+    nav>div {
+        height: auto;
+        padding: 20px 0px;
+    }
+
+    .navSecondUl {
+        margin-left: 260px;
+    }
+
+    .search {
+        width: 300px;
+        height: 8vh;
+        border: #E5E5E5 1px solid;
+        border-radius: 5px;
+    }
+
+    .searchClose {
+        position: fixed;
+        top: 80px;
+        right: 40px;
+    }
+
+    .SearchBar {
+        display: none;
+        margin-top: 30px;
+        margin-left: 200px;
+        margin-bottom: 20px;
+    }
+
+    /* NavBar Section End */
+    /* BlogPost Section Start */
+    .myBlogImg {
+        height: 85vh;
+    }
+
+    /* BlogPost Section End */
+    /* Add To Cart */
+    .closeIcon {
+        display: block;
+        margin-left: 300px;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width:576px) {
+
+    /* NavBar Section Start */
+    .navSecondUl {
+        margin-left: 20px;
+    }
+
+    .searchClose {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+    }
+
+    .SearchBar {
+        display: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 1px;
+    }
+
+    /* NavBar Section End */
+    /* BlogPost Section Start */
+    .myBlogImg {
+        height: 70vh;
+    }
+
+    /* BlogPost Section End */
+/* Add To Cart */
+.closeIcon {
+    display: block;
+    margin-left: 170px;
+    width: 25px;
+    height: 25px;
+}
+
+.carts {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px gray;
+    z-index: 100;
+}
+.Wish{
+    position: fixed;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px gray;
+    z-index: 100;
+}
+}

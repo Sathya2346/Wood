@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woody</title>
+    <!-- Bootrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Animation Link-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Swiper Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- External Style Sheet-->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/pages.css">
+</head>
+
+<body>
+    <div class="Overall">
+        <!-- NavBar Section Start -->
+        <nav class="navbar navbar-expand-lg mb-5 py-sm-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./Assets/images/logo.png" alt="logo"
+                        class="img-fluid me-lg-5 ps-xl-5 pe-lg-5 ms-sm-3 ms-sm-5">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-lg-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 text-center" id="navFirstUl">
+                        <li class="nav-item ms-xl-5">
+                            <a class="nav-link active fw-semibold ms-xl-5" aria-current="page" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="shop.html">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" aria-current="page" href="blog.html">BLOG</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fw-semibold" aria-current="page" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                    <!-- SearchBar Section Start -->
+                    <div class="SearchBar" id="SearchBar">
+                        <input type="search" class="search fw-semibold ps-3" placeholder="Search...">
+                        <h3 class="searchClose" id="searchClose"><ion-icon name="close-outline"></ion-icon></h3>
+                    </div>
+                    <!-- SearchBar Section End -->
+                    <ul class="d-flex me-auto mb-2 mb-lg-0 navSecondUl">
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="#"><ion-icon name="search"
+                                    class="navIcon" id="SearchIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold" aria-current="page" href="login.html"><ion-icon name="person-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold wishIcon" aria-current="page" href="#"><ion-icon name="heart-outline"
+                                    class="navIcon"></ion-icon></a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-semibold position-relative cart-icon" aria-current="page"><ion-icon
+                                    name="bag-handle-outline" class="navIcon"></ion-icon>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill badge product-count">
+                                    
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- NavBar Section End -->
+            <!-- Add To Cart Section Start -->
+                <div class="carts AddToCart">
+                    <div class="cart-title AddToCartTiTle">Shopping Cart</div>
+                        <div class="cart-content AddToCartContent">
+                                        
+                        </div>
+                        <div class="total">
+                                <div class="total-title">Total</div>
+                                <div class="total-price">Rs.0</div>
+                        </div>
+                            <button class="btn-buy" id="place-order-btn">Place Order</button>
+                            <ion-icon name="close" id="cart-close"></ion-icon>
+                </div>
+                
+            <!-- Add To Cart Section End -->
+            <!-- Wish Section Start -->
+                <div class="Wish WishToCart">
+                    <div class="WishCart-title WishToCartTiTle">Wish List</div>
+                        <div class="Wish-content WishToCartContent">
+                                        
+                        </div>
+                         <ion-icon name="close" id="wishClose"></ion-icon>
+                </div>
+            <!-- Wish Section End -->
+        <!-- BlogBanner Section Start -->
+        <div class="ContactBanner text-center py-5 clrWhite">
+            <div class="my-5 py-5">
+                <h1 class="mb-3">Contact Us</h1>
+                <h6>Home <ion-icon name="chevron-forward-outline"></ion-icon> Pages <ion-icon name="chevron-forward-outline"></ion-icon> Contact</h6>
+            </div>
+        </div>
+        <!-- BlogBanner Section End -->
+        <!-- ContentCon Section Start -->
+        <div class="ContentCon">
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12 col-lg-4  col-xl-5 col-xxl-6">
+                        <div class="container">
+                            <div class="row">
+                                <h3>Contact Us</h3>
+                                <p>If you would like to know more about our policies, you can consult our 
+                                    Terms and Conditions. You will also be able to follow your order 
+                                    (tracking number will be provided in an e-mail after ordering). You 
+                                    wish to return some items? <span class="color-ash">Click Here.</span>
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <h3><ion-icon name="location-outline"></ion-icon></h3>                                    
+                                </div>
+                                <div class="col">
+                                    <h5>Address</h5>
+                                    <p class="color-ash">Click the icon in the bottom right of the page 
+                                        to talk to our agents during business hours. At other times we 
+                                        will respond as soon as possible.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <h3><ion-icon name="call-outline"></ion-icon></h3>
+                                </div>
+                                <div class="col">
+                                    <h5>Phone</h5>
+                                    <p class="color-ash">(+84) 1800 68 68</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <h3><ion-icon name="time-outline"></ion-icon></h3>
+                                </div>
+                                <div class="col">
+                                    <h5>Open Hours</h5>
+                                    <p class="color-ash">Monday to Friday 09:30 - 17:30
+                                        <br>Saturday & Sunday 10:00 - 15:00</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <h3><ion-icon name="mail-outline"></ion-icon></h3>
+                                </div>
+                                <div class="col">
+                                    <h5>Email</h5>
+                                    <p class="color-ash">hello@domain.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mt-3 mt-lg-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.05062044!2d-74.3091695806123!3d40.69719334793303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1754137994957!5m2!1sen!2sin" width="600" height="530" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="Map"></iframe>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <h2>Send Us An Message</h2>
+                    <div class="d-flex my-5">
+                        <input type="text" placeholder="Your Name..." id="username" class="conInp me-1 me-sm-3 p-2" required>
+                        <input type="email" placeholder="Your Email..." id="password" class="conInp ms-sm-3 p-2" required>
+                    </div>
+                    <textarea placeholder="Your Message..." class="p-3" id="text"></textarea>
+                    <a href="#"><button class="my-3 shopBtn py-3 px-5 fw-semibold conSendBtn" id="loginBtn">Send</button></a>
+                </div>
+                <!-- Popup -->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <p id="popup-message"></p>
+                        <button class="close-popup" id="closePopup">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ContentCon Section End -->
+        <!-- Footer Section Start -->
+        <footer>
+            <div class="Footer mt-4 pt-5 ">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-lg">
+                            <img src="./Assets/images/logo.png" alt="logo" class="img-fluid">
+                            <h2 class="my-3">(+84) 1800 68 68</h2>
+                            <p class="Jost12px">Address : 1234 Heaven Stress, USA.</p>
+                            <p class="Jost12px">Email: hello@domain.com</p>
+                            <p class="Jost12px">Fax: (+100) 123 456 7890</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">
+                            <p class="fw-semibold">INFO</p>
+                            <a href="#"><p class="Jost12px">Custom Service</p></a>
+                            <a href="#"><p class="Jost12px">F.A.Q.'s</p></a>
+                            <a href="#"><p class="Jost12px">Order Tracking</p></a>
+                            <a href="#"><p class="Jost12px">Contact Us</p></a>
+                            <a href="#"><p class="Jost12px">Events</p></a>
+                            <a href="#"><p class="Jost12px">Popular</p></a>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">
+                            <p class="fw-semibold">SERVICES</p>
+                            <a href="#"><p class="Jost12px">Sitemap</p></a>
+                            <a href="#"><p class="Jost12px">Privacy Policy</p></a>
+                            <a href="#"><p class="Jost12px">Your Account</p></a>
+                            <a href="#"><p class="Jost12px">Advanced Search</p></a>
+                            <a href="#"><p class="Jost12px">Term & Condition</p></a>
+                            <a href="#"><p class="Jost12px">Contact Us</p></a>
+                        </div>
+                        <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0">  
+                            <p class="fw-semibold">ACCOUNT</p>
+                            <a href="#"><p class="Jost12px">About Us</p></a>
+                            <a href="#"><p class="Jost12px">Delivery Information</p></a>
+                            <a href="#"><p class="Jost12px">Privacy Policy</p></a>
+                            <a href="#"><p class="Jost12px">Discount</p></a>
+                            <a href="#"><p class="Jost12px">Custom Service</p></a>
+                            <a href="#"><p class="Jost12px">Term & Condition</p></a>
+                        </div>
+                        <div class="col-sm mt-3 mt-sm-0">
+                            <p class="fw-semibold">NEWSLETTERS</p>
+                            <p class="Jost15px color-ash">Join 40.00+ Subscribers and get a new discount coupon</p>
+                            <h5 class="align-middle">
+                                <div class="d-flex">
+                                        <input type="email" id="footEmailInput" class="footEmailInput py-2 ps-1" placeholder="Your email adress...">                                                                    
+                                        <span class="FootEmailIcon"><ion-icon name="mail-outline" class="EmailIcon"></ion-icon></span>
+                                </div>
+                            </h5>
+                            <p class="mt-3">
+                                <span><ion-icon name="logo-xing" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-dribbble" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-behance" class="FootLogoIcons ms-2"></ion-icon></span>
+                                <span><ion-icon name="logo-instagram" class="FootLogoIcons ms-2"></ion-icon></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="footSecondRow d-sm-flex justify-content-between">
+                            <p class="mt-4">&copy; Copyright 2025 | <span class="color-ash">Woody </span> By SumoTheme. <span class="color-ash">Powered by Shopify.</span></p>
+                            <p class="mt-4"><img src="./Assets/images/img44.webp" alt="img44" class="img-fluid"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('loginBtn');
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popup-message');
+    const closePopup = document.getElementById('closePopup');
+
+    loginBtn.addEventListener('click', () => {
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        if(username && password){
+            popupMessage.innerText = `Message Send Successfully!`;
+        } else {
+            popupMessage.innerText = "Please fill in all fields!";
+        }
+        popup.style.display = "flex";
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = "none";
+    });
+
+    </script>
+    <!-- External Script Link -->
+    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/shop.js"></script>
+    <script src="./Assets/js/cart.js"></script>
+    <!-- Swiper Link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Animation Link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Bootrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <!-- Icon Link -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
